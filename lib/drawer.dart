@@ -43,7 +43,7 @@ class _MyDrawerState extends State<MyDrawer> {
         width: MediaQuery
             .of(context)
             .size
-            .width / 1.7,
+            .width / 1.5,
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(color: Colors.amber, width: 2)),
@@ -68,19 +68,21 @@ class _MyDrawerState extends State<MyDrawer> {
                       Padding(
                         padding: const EdgeInsets.only(left: 28.0,bottom: 8),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+
                               Container(width: 1,
-                                height: submenuList.length * 30,
+                                height: submenuList.length * 30-10,
                                 color: Colors.amber,),
 
-                              const SizedBox(width: 45,),
+                              const SizedBox(width: 50,),
 
                               SizedBox(height: submenuList.length * 32,
                                 width: 150,
                                 child: ListView.builder(itemBuilder: (BuildContext context,index){
                                   return Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Text(submenuList[index]),
+                                    child: Text(submenuList[index],style: const TextStyle(letterSpacing: .8),),
                                   );
                                 },
                                   itemCount: submenuList.length,
@@ -95,7 +97,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     //leading: Icon(Icons.email_outlined),
                     leading: Container(height: 25,width: 25,child: Image.asset(drawerList.icon,fit: BoxFit.cover,),
                     ),
-                    title: Text(drawerList.title),
+                    title: Text(drawerList.title,style: const TextStyle(letterSpacing: 1,fontSize: 15),),
                     iconColor: Colors.amber,
                     textColor: Colors.amber,
                     collapsedTextColor: Colors.black,
